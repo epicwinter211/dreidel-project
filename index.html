@@ -1,0 +1,44 @@
+<p id=gimel>Gimel: </p>
+<p id=nun>Nun: </p>
+<p id=shin>Shin: </p>
+<p id=hay>Hay: </p>
+<script>
+    var gimel = 0;    
+    var nun = 0;     //this tells the computer
+    var shin = 0;     //how many sides are on the dreidel
+    var hay = 0;     
+
+
+    function roll() {
+        var roll = Math.floor(Math.random()*4);
+        if (roll == 0) {
+            gimel++;
+        }
+        if (roll == 1) {     //this puts each side into a number
+            nun++;           //so it can divide the number of rolls randomly
+        }
+        if (roll == 2) {
+            shin++;
+        }
+        if (roll == 3) {
+            hay++;
+        }
+    }
+
+    var rolls = 50;
+    for (var i = 0; i < rolls; i++) {
+        roll();
+    }
+
+    console.clear();
+    console.log("Gimel: " +  gimel);
+    console.log("Nun: " +  nun);
+    console.log("Shin: " +  shin);
+    console.log("Hay: " +  hay);
+
+    document.getElementById("gimel").innerText ="Gimel: " +  gimel;     
+    document.getElementById("nun").innerText ="Nun: " +  nun;  
+    document.getElementById("shin").innerText ="Shin: " +  shin;  
+    document.getElementById("hay").innerText ="Hay: " + hay;  
+</script>
+
